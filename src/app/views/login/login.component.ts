@@ -1,4 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '@services/auth.service';
 import { LibraryService } from '@services/library.service';
 
 @Component({
@@ -8,10 +10,17 @@ import { LibraryService } from '@services/library.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   public libraryService = inject(LibraryService);
+  public authService = inject(AuthService);
+  public routerService = inject(Router);
 
-  ngOnInit(): void {
-    console.log('LoginComponent: ngOnInit');
+  goToLibraryView(): void {
+    this.authService.login();
+    this.routerService.navigate(['/library']);
+  }
+
+  goToLibraryViewWithoutLogin(): void {
+    this.routerService.navigate(['/library']);
   }
 }
