@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { LibraryService } from '@services/library.service';
 
 @Component({
   selector: 'app-login',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {}
+export class LoginComponent implements OnInit {
+  public libraryService = inject(LibraryService);
+
+  ngOnInit(): void {
+    console.log('LoginComponent: ngOnInit');
+  }
+}
