@@ -1,8 +1,29 @@
-<form [formGroup]="loginForm">
-  <label for="email">Email</label>
-  <input formControlName="email" id="email" type="email" placeholder="Email" />
-  <label for="password">Password</label>
-  <input formControlName="password" id="password" type="password" placeholder="Password" />
-  <button (click)="login()" type="submit">Iniciar sesión</button>
-  <button (click)="register()" type="submit">Registrarme</button>
-</form>
+<div class="form-container">
+  <div class="form-section">
+    <div class="form-container-image">
+      <div class="form-text">
+        <h1 class="form-title-image">Search for your favorite books</h1>
+        <p class="form-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+      </div>
+    </div>
+    <form [formGroup]="loginForm" class="form-login">
+      <h1 class="form-title">Login</h1>
+      <label class="form-label" for="email">Email</label>
+      <input class="form-input" formControlName="email" id="email" type="email" placeholder="Email" />
+      <div class="form-error" *ngIf="loginForm.get('email')!.invalid">
+        <p class="form-error-text">Email is invalid</p>
+      </div>
+      <label class="form-label" for="password">Password</label>
+      <input class="form-input" formControlName="password" id="password" type="password" placeholder="Password" />
+      <div class="form-error" *ngIf="loginForm.get('password')!.invalid">
+        <p class="form-error-text">Password is invalid</p>
+      </div>
+      <button [disabled]="loginForm.invalid" class="submit-button" (click)="login()" type="submit">
+        Iniciar sesión
+      </button>
+      <button [disabled]="loginForm.invalid" class="submit-button" (click)="register()" type="submit">
+        Registrarme
+      </button>
+    </form>
+  </div>
+</div>

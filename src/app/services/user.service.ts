@@ -16,6 +16,10 @@ export class UserService {
     return this.http.post<User | Errors>(`${this.API}/user`, user).pipe(catchError(this.handleError));
   }
 
+  public loginUser(user: User): Observable<User | Errors> {
+    return this.http.post<User | Errors>(`${this.API}/user/login`, user).pipe(catchError(this.handleError));
+  }
+
   public handleError(error: HttpErrorResponse): Observable<Errors> {
     return of({
       errors: [

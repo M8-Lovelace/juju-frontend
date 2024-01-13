@@ -19,4 +19,10 @@ export class LibraryComponent {
     this.authService.logout();
     this.routerService.navigate(['/login']);
   }
+
+  ngOnInit(): void {
+    this.libraryService.getBooks().subscribe((books) => {
+      console.log(books);
+    });
+  }
 }
