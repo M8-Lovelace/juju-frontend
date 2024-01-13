@@ -1,7 +1,8 @@
-<form [formGroup]="login" (ngSubmit)="onSave()">
+<form [formGroup]="loginForm">
   <label for="email">Email</label>
   <input formControlName="email" id="email" type="email" placeholder="Email" />
   <label for="password">Password</label>
   <input formControlName="password" id="password" type="password" placeholder="Password" />
-  <button type="submit">Iniciar sesión</button>
+  <button (click)="login()" type="submit">Iniciar sesión</button>
+  <button (click)="register()" type="submit">Registrarme</button>
 </form>

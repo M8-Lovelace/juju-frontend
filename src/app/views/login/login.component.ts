@@ -1,8 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Errors } from '@models/error.model';
+import { User } from '@models/user.model';
 import { AuthService } from '@services/auth.service';
-import { LibraryService } from '@services/library.service';
+import { UserService } from '@services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,24 +14,39 @@ import { LibraryService } from '@services/library.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  public libraryService = inject(LibraryService);
   private fb = inject(FormBuilder);
-  public authService = inject(AuthService);
-  public routerService = inject(Router);
+  private routerService = inject(Router);
+  private userService = inject(UserService);
+  private authService = inject(AuthService);
 
-  public login = this.fb.group({
+  public loginForm = this.fb.group({
     email: ['laurasusano@gmail.com', [Validators.required, Validators.email]],
     password: ['laura1234', [Validators.required, Validators.minLength(8)]]
   });
 
-  onSave(): void {
-    if (this.login.invalid) {
+  login(): void {
+    if (this.loginForm.invalid) {
       console.log('Invalid form');
-      this.login.markAllAsTouched;
+      this.loginForm.markAllAsTouched;
     } else {
       console.log('Valid form');
+      // TODO: Ir a la API y comprobar si el usuario existe, iniciar sesión, almacenar los datos del usuario y redireccionar a library
       this.authService.login();
       this.routerService.navigate(['/library']);
     }
+  }
+
+  register(): void {
+    const user = this.loginForm.value as User;
+    this.userService.createUser(user).subscribe((user: User | Errors) => {
+      if ((user as Errors).errors) {
+        const errors = (user as Errors).errors;
+        errors.forEach((error) => {
+          console.log(error.msg);
+        });
+      } else {
+        alert(`Usuario creado ${JSON.stringify(user)}`);
+      }
+    });
   }
 }
