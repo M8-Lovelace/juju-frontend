@@ -15,16 +15,8 @@ export class LibraryComponent {
   public authService = inject(AuthService);
   public routerService = inject(Router);
 
-  goToLogin(): void {
+  logout(): void {
     this.authService.logout();
     this.routerService.navigate(['/login']);
-  }
-
-  goToLoginWithoutLogout(): void {
-    this.routerService.navigate(['/login']);
-  }
-
-  login(): void {
-    this.authService.login();
   }
 }

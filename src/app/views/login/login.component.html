@@ -1,3 +1,7 @@
-<p>login works!</p>
-<button (click)="goToLibraryView()">iniciar sesión</button>
-<button (click)="goToLibraryViewWithoutLogin()">iniciar sesión SIN LOGIN</button>
+<form [formGroup]="login" (ngSubmit)="onSave()">
+  <label for="email">Email</label>
+  <input formControlName="email" id="email" type="email" placeholder="Email" />
+  <label for="password">Password</label>
+  <input formControlName="password" id="password" type="password" placeholder="Password" />
+  <button type="submit">Iniciar sesión</button>
+</form>
