@@ -1,0 +1,14 @@
+<div class="sidebar">
+  <div class="sidebar--item">
+    <span>TODO: ICON</span>
+  </div>
+  <div class="sidebar--item sidebar--item-input">
+    <div class="input">
+      <i (click)="inputFocus()" class="icon icon-search"></i>
+      <input (input)="onInputChanges($event)" #input type="text" placeholder="Search book" />
+    </div>
+  </div>
+  <div class="sidebar--item">
+    <i (click)="logout()" class="icon icon-logout"></i>
+  </div>
+</div>

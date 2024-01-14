@@ -1,32 +1,26 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable, OnInit, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
 import { environment } from '@environments/environment';
-import { Errors } from '@models/error.model';
-import { User } from '@models/user.model';
-import { Observable, catchError, map, of } from 'rxjs';
+import { Response } from '@models/response.model';
+import { Login, User } from '@models/user.model';
+import { Observable, catchError } from 'rxjs';
+import { UtilsService } from './utils.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  public http = inject(HttpClient);
+  private http = inject(HttpClient);
+  private utilsService = inject(UtilsService);
   private readonly API = environment.API;
 
-  public createUser(user: User): Observable<User | Errors> {
-    return this.http.post<User | Errors>(`${this.API}/user`, user).pipe(catchError(this.handleError));
+  public createUser(user: User): Observable<Response<User>> {
+    return this.http.post<Response<User>>(`${this.API}/user`, user).pipe(catchError(this.utilsService.handleError));
   }
 
-  public loginUser(user: User): Observable<User | Errors> {
-    return this.http.post<User | Errors>(`${this.API}/user/login`, user).pipe(catchError(this.handleError));
-  }
-
-  public handleError(error: HttpErrorResponse): Observable<Errors> {
-    return of({
-      errors: [
-        {
-          msg: error.message
-        }
-      ]
-    } as Errors);
+  public loginUser(user: User): Observable<Response<Login>> {
+    return this.http
+      .post<Response<Login>>(`${this.API}/user/login`, user)
+      .pipe(catchError(this.utilsService.handleError));
   }
 }

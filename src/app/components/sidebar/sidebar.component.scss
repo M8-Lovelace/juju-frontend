@@ -1,0 +1,57 @@
+.sidebar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  position: sticky;
+  padding: 0 20px;
+  background-color: #7945e5;
+
+  > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--item {
+    height: 100%;
+
+    &-input {
+      input {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
+
+.sidebar > div:nth-child(1),
+.sidebar div:nth-child(3) {
+  width: 64px;
+}
+
+.sidebar > div:nth-child(2) {
+  width: calc(100% - 128px);
+}
+
+.icon-logout {
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 36px;
+  padding: 6px 12px 6px 10px;
+  border-radius: 10px;
+}
+
+.icon-search {
+  margin-right: 10px;
+  cursor: pointer;
+  color: #7945e5;
+}

@@ -26,7 +26,7 @@
       "@environments/*": ["./src/environments/*"],
       "@models/*": ["./src/app/models/*"],
       "@services/*": ["./src/app/services/*"],
-      "@views/*": ["./src/app/views/*"]
+      "@pages/*": ["./src/app/pages/*"]
     }
   },
   "angularCompilerOptions": {

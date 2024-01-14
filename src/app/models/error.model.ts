@@ -4,7 +4,3 @@ export interface Error {
   param?: string;
   location?: string;
 }
-
-export interface Errors {
-  errors: Error[];
-}
