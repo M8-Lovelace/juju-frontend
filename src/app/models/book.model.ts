@@ -10,3 +10,7 @@ export interface Book {
 export interface Books {
   books: Book[];
 }
+
+export interface BookById {
+  book: Book;
+}

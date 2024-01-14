@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { CardComponent } from '@components/card/card.component';
 import { Book } from '@models/book.model';
-import { BookComponent } from '@pages/book/book.component';
 import { LibraryService } from '@services/library.service';
 import { UtilsService } from '@services/utils.service';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
@@ -9,7 +9,7 @@ import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 @Component({
   selector: 'app-library',
   standalone: true,
-  imports: [SidebarComponent, BookComponent, CommonModule],
+  imports: [SidebarComponent, CommonModule, CardComponent],
   providers: [LibraryService, UtilsService],
   templateUrl: './library.component.html',
   styleUrl: './library.component.scss'
@@ -43,5 +43,9 @@ export class LibraryComponent {
     } else {
       this.books = this.booksBackup;
     }
+  }
+
+  reloadBook(event: Book): void {
+    this.getBooks();
   }
 }

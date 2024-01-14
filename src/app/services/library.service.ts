@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { environment } from '@environments/environment';
-import { Book, Books } from '@models/book.model';
+import { Book, BookById, Books } from '@models/book.model';
 import { Response } from '@models/response.model';
 import { Observable, catchError } from 'rxjs';
 import { UtilsService } from './utils.service';
@@ -25,9 +25,9 @@ export class LibraryService {
       .pipe(catchError(this.utilsService.handleError));
   }
 
-  public getBookById(id: string): Observable<Response<Book>> {
+  public getBookById(id: string): Observable<Response<BookById>> {
     return this.http
-      .get<Response<Book>>(`${this.API}/book/${id}`, {
+      .get<Response<BookById>>(`${this.API}/book/${id}`, {
         headers: {
           Authorization: this.token
         }

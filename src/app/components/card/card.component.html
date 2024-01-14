@@ -1,0 +1,14 @@
+<article class="book">
+  <span class="book--label">Title</span>
+  <span class="book--title">{{ book.title }}</span>
+  <span class="book--label">Author</span>
+  <span class="book--title">{{ book.author }}</span>
+  <span class="book--label">Year</span>
+  <span class="book--title">{{ book.year }}</span>
+  <span class="book--label">Status</span>
+  <span class="book--title">{{ book.status ? 'Disponible' : 'Reservado' }}</span>
+  <div class="book--buttons">
+    <button (click)="onEdit(book)">Edit</button>
+    <button (click)="onDelete(book)">Delete</button>
+  </div>
+</article>

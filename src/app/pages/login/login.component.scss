@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   height: 100vh;
-  background-color: rgb(42, 16, 103);
+  background-color: #2a1067;
 }
 
 .form-section {
@@ -12,13 +12,13 @@
   width: 100%;
   margin: 100px;
   max-width: 1000px;
-  box-shadow: inset 0 -3em 3em rgba(12, 12, 12, 0.74), 0.3em 0.3em 1em rgba(12, 12, 12, 0.74);
+  box-shadow: inset 0 -3em 3em #0c0c0cbd, 0.3em 0.3em 1em #0c0c0cbd;
   border-radius: 5px;
 }
 
 .form-container-image {
   background: url(../../../assets/images/books.jpg);
-  background-color: rgb(121, 69, 229) !important;
+  background-color: #7945e5 !important;
   background-blend-mode: darken;
   width: 50%;
   height: 100%;
@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgb(4, 5, 35);
+  background-color: #040523;
   width: 50%;
   height: 100%;
   border-radius: 0 5px 5px 0;
@@ -68,8 +68,8 @@
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: rgb(4, 5, 35);
-  border: 1px solid rgb(121, 69, 229);
+  background-color: #040523;
+  border: 1px solid #7945e5;
   color: white;
   font-size: 15px;
 }
@@ -82,7 +82,7 @@
 
 .submit-button {
   margin-top: 20px;
-  background-color: rgb(121, 69, 229);
+  background-color: #7945e5;
   color: white;
   border: none;
   border-radius: 20px;
@@ -101,8 +101,7 @@
   margin-bottom: 10px;
 }
 
-// change color if button is disabled
 .submit-button[disabled] {
-  background-color: rgb(121, 69, 229, 0.5);
+  background-color: #7945e580;
   cursor: not-allowed;
 }

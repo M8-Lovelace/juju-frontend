@@ -1,7 +1,6 @@
 <app-sidebar (onInputChangesEvent)="onInputChanges($event)"></app-sidebar>
 <div class="library">
   @if (books.length) { @for (item of books; track $index) {
-  <pre>{{ item | json }}</pre>
-  <!-- <app-book /> -->
+  <app-card [book]="item" (delete)="reloadBook($event)" />
   } }
 </div>

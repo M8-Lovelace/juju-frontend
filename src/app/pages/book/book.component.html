@@ -1,1 +1,19 @@
-<p>book works!</p>
+<div class="sidebar">
+  <i (click)="goBack()" class="icon icon-arrow"></i>
+</div>
+
+<div class="edit-container">
+  <form [formGroup]="editForm" class="edit">
+    <h1 class="edit-title">Edit Book</h1>
+    <label class="edit-label" for="title">Title</label>
+    <input class="edit-input" formControlName="title" id="title" />
+
+    <label class="edit-label" for="author">Author</label>
+    <input class="edit-input" formControlName="author" id="author" />
+
+    <label class="edit-label" for="year">Year</label>
+    <input class="edit-input" formControlName="year" id="year" />
+
+    <button class="submit-button" [disabled]="editForm.invalid" (click)="editBook()">Editar</button>
+  </form>
+</div>

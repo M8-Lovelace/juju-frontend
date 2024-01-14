@@ -1,0 +1,75 @@
+.submit-button[disabled] {
+  background-color: rgb(121, 69, 229, 0.5);
+  cursor: not-allowed;
+}
+
+.edit-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  color: black;
+  border-radius: 5px;
+  padding: 120px;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+}
+
+.edit-input {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  border: 2px solid #040523;
+  font-size: 15px;
+}
+
+.submit-button {
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #7945e5;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #040523;
+}
+
+.sidebar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  position: sticky;
+  padding: 0 20px;
+  background-color: #7945e5;
+}
+
+.icon-arrow {
+  padding-left: 15px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.icon-arrow:hover {
+  color: #040523;
+}
