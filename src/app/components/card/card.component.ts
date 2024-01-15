@@ -23,7 +23,6 @@ export class CardComponent {
   }
 
   onDelete(book: Book): void {
-    console.log('Delete');
     this.libraryService.deleteBook(this.book._id!).subscribe((book) => {
       if ((book as Response<Book>).errors) {
         const errors = book.errors;
@@ -48,7 +47,6 @@ export class CardComponent {
   }
 
   onChangeStatus(book: Book): void {
-    console.log('Change status');
     this.libraryService.updateStatusBook(book._id, !book.status).subscribe((book) => {
       if ((book as Response<Book>).errors) {
         const errors = book.errors;

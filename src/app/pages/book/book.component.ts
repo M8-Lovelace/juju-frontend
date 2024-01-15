@@ -40,7 +40,6 @@ export class BookComponent implements OnInit {
     this.libraryService.getBookById(this.id).subscribe((response) => {
       if (response.data) {
         this.book = response.data.book;
-        console.log(this.book.author);
         this.editForm.setValue({
           title: this.book.title,
           author: this.book.author,
@@ -55,7 +54,6 @@ export class BookComponent implements OnInit {
   editBook(): void {
     if (this.editForm.valid) {
       const book = this.editForm.value as Book;
-      console.log(book);
       book._id = this.id;
       this.libraryService.updateBook(book).subscribe((book) => {
         if (book.errors) {

@@ -1,3 +1,3 @@
 export const environment = {
-  API: 'http://localhost:4600/api'
+  API: 'https://juju-api.onrender.com/api'
 };

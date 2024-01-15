@@ -18,12 +18,8 @@
       <div class="form-error" *ngIf="loginForm.get('password')!.invalid">
         <p class="form-error-text">Password is invalid</p>
       </div>
-      <button [disabled]="loginForm.invalid" class="submit-button" (click)="login()" type="submit">
-        Iniciar sesión
-      </button>
-      <button [disabled]="loginForm.invalid" class="submit-button" (click)="register()" type="submit">
-        Registrarme
-      </button>
+      <button [disabled]="loginForm.invalid" class="submit-button" (click)="login()" type="submit">Sign in</button>
+      <button [disabled]="loginForm.invalid" class="submit-button" (click)="register()" type="submit">Sign up</button>
     </form>
   </div>
 </div>

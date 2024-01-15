@@ -53,7 +53,6 @@ export class CreateComponent implements OnInit {
   createBook(): void {
     if (this.createForm.valid) {
       const book = this.createForm.value as Book;
-      console.log(book);
       this.libraryService.createBook(book).subscribe((book) => {
         if (book.errors) {
           const errors = book.errors;

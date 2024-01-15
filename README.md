@@ -15,7 +15,7 @@ Lista de tecnologías usadas en el proyecto
 
 Una pequeña intro sobre la instalación.
 
-1. Clone el repositorio: `git clone https://github.com/M8-Lovelace/Juju-frontend`
-2. Entre en la carpeta Juju: `cd Juju-frontend`
+1. Clone el repositorio: `git clone https://github.com/M8-Lovelace/juju-frontend`
+2. Entre en la carpeta Juju: `cd juju-frontend`
 3. Instale las dependencias: `npm install`.
 4. Ejecute en modo desarrollo: `npx ng serve`

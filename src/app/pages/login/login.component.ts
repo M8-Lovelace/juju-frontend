@@ -24,7 +24,7 @@ export class LoginComponent {
   private authService = inject(AuthService);
 
   public loginForm = this.fb.group({
-    email: ['admin@dgmail.com', [Validators.required, Validators.email]],
+    email: ['admin@gmail.com', [Validators.required, Validators.email]],
     password: ['admin123', [Validators.required, Validators.minLength(8)]]
   });
 
