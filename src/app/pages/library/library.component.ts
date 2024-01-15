@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { CardComponent } from '@components/card/card.component';
 import { Book } from '@models/book.model';
 import { LibraryService } from '@services/library.service';
@@ -16,6 +17,7 @@ import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 })
 export class LibraryComponent {
   private libraryService = inject(LibraryService);
+  public routerService = inject(Router);
   private booksBackup: Book[] = [];
   public books: Book[] = [];
 
@@ -47,5 +49,9 @@ export class LibraryComponent {
 
   reloadBook(event: Book): void {
     this.getBooks();
+  }
+
+  goToCreateBook(): void {
+    this.routerService.navigate(['/create']);
   }
 }

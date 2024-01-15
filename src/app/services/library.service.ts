@@ -74,4 +74,18 @@ export class LibraryService {
       })
       .pipe(catchError(this.utilsService.handleError));
   }
+
+  public updateStatusBook(id: any, status: boolean): Observable<Response<Book>> {
+    return this.http
+      .put<Response<Book>>(
+        `${this.API}/book/status/${id}`,
+        { status },
+        {
+          headers: {
+            Authorization: this.token
+          }
+        }
+      )
+      .pipe(catchError(this.utilsService.handleError));
+  }
 }

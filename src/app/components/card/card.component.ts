@@ -45,13 +45,29 @@ export class CardComponent {
         this.delete.emit(true);
       }
     });
+  }
 
-    this.libraryService.deleteBook(this.book._id!).subscribe((response) => {
-      if (response.data) {
-        // this.book = response.data.book;
-        // console.log(this.book.author);
+  onChangeStatus(book: Book): void {
+    console.log('Change status');
+    this.libraryService.updateStatusBook(book._id, !book.status).subscribe((book) => {
+      if ((book as Response<Book>).errors) {
+        const errors = book.errors;
+        errors?.forEach((error) => {
+          Swal.fire({
+            title: 'Error',
+            text: error.msg,
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          });
+        });
       } else {
-        this.book = {} as Book;
+        Swal.fire({
+          title: 'Success',
+          text: 'Book updated!',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        });
+        this.delete.emit(true);
       }
     });
   }

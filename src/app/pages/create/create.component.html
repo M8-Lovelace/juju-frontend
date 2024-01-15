@@ -1,0 +1,19 @@
+<div class="sidebar">
+  <i (click)="goBack()" class="icon icon-arrow"></i>
+</div>
+
+<div class="create-container">
+  <form [formGroup]="createForm" class="create">
+    <h1 class="create-title">Create Book</h1>
+    <label class="create-label" for="title">Title</label>
+    <input class="create-input" formControlName="title" id="title" />
+
+    <label class="create-label" for="author">Author</label>
+    <input class="create-input" formControlName="author" id="author" />
+
+    <label class="create-label" for="year">Year</label>
+    <input class="create-input" formControlName="year" id="year" />
+
+    <button class="submit-button" [disabled]="createForm.invalid" (click)="createBook()">Crear</button>
+  </form>
+</div>

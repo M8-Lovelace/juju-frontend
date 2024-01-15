@@ -1,3 +1,62 @@
 .library {
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+  gap: 20px;
+
+  &.--item {
+    width: 25%;
+  }
+}
+
+.submit-button {
+  width: 128px;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #7945e5;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.button {
+  background: #7945e5;
+  border: none;
+  color: #ffffff;
+  padding-left: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-container {
+  margin-left: 40px;
+}
+
+.icon-plus {
+  color: #ffffff;
+  font-size: 12px;
+  padding-left: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 743px) {
+  .library {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 744px) and (max-width: 1085px) {
+  .library {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

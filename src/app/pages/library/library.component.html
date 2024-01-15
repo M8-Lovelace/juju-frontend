@@ -1,6 +1,12 @@
 <app-sidebar (onInputChangesEvent)="onInputChanges($event)"></app-sidebar>
+<div class="button-container">
+  <div class="submit-button">
+    <button class="button" (click)="goToCreateBook()">Create Book</button>
+    <i class="icon icon-plus"></i>
+  </div>
+</div>
 <div class="library">
   @if (books.length) { @for (item of books; track $index) {
-  <app-card [book]="item" (delete)="reloadBook($event)" />
+  <app-card class="library--item" [book]="item" (delete)="reloadBook($event)" />
   } }
 </div>
